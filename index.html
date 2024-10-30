@@ -9,8 +9,18 @@
     <div id="cpay_button"></div>
 
     <script src="http://widget.cryptumpay.local/dev.js"></script>
-    <script>
-        CPayV3.button('cpay_button');
-    </script>
+<script>
+(async () => {
+    const widget = await CPayV3.create('cpay_button');
+
+    // setTimeout(() => CPayV3.create('cpay_button'), 3 * 1000);
+    // setTimeout(() => CPayV3.create('cpay_button'), 5 * 1000);
+
+    // setTimeout(() => widget.remove(), 1 * 1000);
+    // setTimeout(() => button.remove(), 9 * 1000);
+
+    // setTimeout(() => CPayV3.create('cpay_button'), 2 * 1000);
+})();
+</script>
 </body>
 </html>
