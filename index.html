@@ -13,6 +13,18 @@
 (async () => {
     const widget = await CPayV3.create('cpay_button');
 
+    const currencies = await widget.api.getCurrencies();
+
+    const currency = currencies[0];
+    const amount = '150';
+    const canEditAmount = false;
+
+    widget.config.setDescription('Hello, world!');
+    widget.config.setPrice(amount, currency, canEditAmount);
+    widget.config.setCustomerId('100500');
+    widget.config.setOrderId('123');
+    widget.config.setMerchantId('bca52cdc-ba4f-43ae-8cbb-55301f047c72');
+
     // setTimeout(() => CPayV3.create('cpay_button'), 3 * 1000);
     // setTimeout(() => CPayV3.create('cpay_button'), 5 * 1000);
 
